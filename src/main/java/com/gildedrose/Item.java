@@ -43,7 +43,7 @@ public class Item {
                 if (!this.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                     subQualityIfInStockExceptSulfuras();
                 } else {
-                    this.quality = this.quality - this.quality;
+                    this.quality = 0;
                 }
             } else {
                 addQualityBeforeReach50();
