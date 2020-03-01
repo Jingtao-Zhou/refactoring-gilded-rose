@@ -65,7 +65,7 @@ public class Item {
         }
     }
 
-    private void addQualityBeforeReach50() {
+    protected void addQualityBeforeReach50() {
         if (this.quality < 50) {
             this.quality = this.quality + 1;
         }
