@@ -71,6 +71,13 @@ public class ItemTest {
     }
 
     @Test
+    public void should_not_sub_quality_when_update_expired_Sulfuras_Hand_of_Ragnaros() {
+        Item item = new SulfurasHandOfRagnaros(HAS_EXPIRED, ENOUGH_QUALITY);
+        item.updateItem();
+        assertEquals(ENOUGH_QUALITY, item.getQuality());
+    }
+
+    @Test
     public void should_sub_1_sell_in_when_update_except_Sulfuras_Hand_of_Ragnaros() {
         List<Item> itemList = get5SellInItemsWithEnoughQualityExceptSulfurasHandOfRagnaros();
         itemList.forEach(item -> {
@@ -92,6 +99,21 @@ public class ItemTest {
         item.updateItem();
         assertEquals(3, item.getQuality());
     }
+
+    @Test
+    public void should_add_3_quality_when_sell_in_is_less_than_6_when_update_Backstage_passes_to_a_TAFKAL80ETC_concert() {
+        Item item = new BackstagePassesTo_a_TAFKAL80ETC_Concert(5,0);
+        item.updateItem();
+        assertEquals(3,item.getQuality());
+    }
+
+    @Test
+    public void should_add_2_quality_when_sell_in_is_less_than_11_and_bigger_than_5_when_update_Backstage_passes_to_a_TAFKAL80ETC_concert() {
+        Item item = new BackstagePassesTo_a_TAFKAL80ETC_Concert(6,0);
+        item.updateItem();
+        assertEquals(2,item.getQuality());
+    }
+
 
     private List<Item> get5SellInItemsWithEnoughQualityExceptSulfurasHandOfRagnaros(){
         return Lists.newArrayList(
