@@ -4,7 +4,10 @@ import com.gildedrose.item.AgedBrie;
 import com.gildedrose.item.BackstagePassesTo_a_TAFKAL80ETC_Concert;
 import com.gildedrose.item.OtherItem;
 import com.gildedrose.item.SulfurasHandOfRagnaros;
+import com.google.common.collect.Lists;
 import org.junit.Test;
+
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -69,9 +72,11 @@ public class ItemTest {
 
     @Test
     public void should_sub_1_sell_in_when_update_except_Sulfuras_Hand_of_Ragnaros() {
-        Item item = new OtherItem("others", 5, ENOUGH_QUALITY);
-        item.updateItem();
-        assertEquals(4, item.getSell_in());
+        List<Item> itemList = get5SellInItemsWithEnoughQualityExceptSulfurasHandOfRagnaros();
+        itemList.forEach(item -> {
+            item.updateItem();
+            assertEquals(4, item.getSell_in());
+        });
     }
 
     @Test
@@ -82,9 +87,17 @@ public class ItemTest {
     }
 
     @Test
-    public void should_sub_2_quality_when_expired_and_update_except_Aged_Brie_and_Backstage_passes_to_a_TAFKAL80ETC_concert() {
-        Item item = new OtherItem("others", HAS_EXPIRED,5);
+    public void should_sub_2_quality_when_expired_and_update_except_Aged_Brie_and_Backstage_passes_to_a_TAFKAL80ETC_concert_and_Sulfuras_Hand_of_Ragnaros() {
+        Item item = new OtherItem("other item", HAS_EXPIRED,5);
         item.updateItem();
         assertEquals(3, item.getQuality());
+    }
+
+    private List<Item> get5SellInItemsWithEnoughQualityExceptSulfurasHandOfRagnaros(){
+        return Lists.newArrayList(
+                new AgedBrie("Aged Brie", 5, ENOUGH_QUALITY),
+                new BackstagePassesTo_a_TAFKAL80ETC_Concert("Aged Brie", 5, ENOUGH_QUALITY),
+                new OtherItem("Aged Brie", 5, ENOUGH_QUALITY)
+        );
     }
 }
