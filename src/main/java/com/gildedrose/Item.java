@@ -44,11 +44,9 @@ public abstract class Item {
         }
     }
 
-    protected void subQualityIfInStockExceptSulfuras() {
+    protected void subQualityIfInStock() {
         if (this.quality > 0) {
-            if (!this.name.equals("Sulfuras, Hand of Ragnaros")) {
-                this.quality = this.quality - 1;
-            }
+            this.quality = this.quality - 1;
         }
     }
 

@@ -10,13 +10,13 @@ public class OtherItem extends Item {
 
     @Override
     protected void updateQuality() {
-        subQualityIfInStockExceptSulfuras();
+        subQualityIfInStock();
     }
 
     @Override
     protected void updateWhenExpired() {
         if (this.getSell_in() < 0) {
-            subQualityIfInStockExceptSulfuras();
+            subQualityIfInStock();
         }
     }
 }
