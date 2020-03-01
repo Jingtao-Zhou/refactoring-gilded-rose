@@ -7,9 +7,9 @@ class GildedRose {
         this.items = items;
     }
 
-    public void update_quality() {
+    public void updateItems() {
         for (Item item : items) {
-            item.update_quality();
+            item.updateItem();
         }
     }
 }
