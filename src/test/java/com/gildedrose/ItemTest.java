@@ -96,8 +96,8 @@ public class ItemTest {
     private List<Item> get5SellInItemsWithEnoughQualityExceptSulfurasHandOfRagnaros(){
         return Lists.newArrayList(
                 new AgedBrie("Aged Brie", 5, ENOUGH_QUALITY),
-                new BackstagePassesTo_a_TAFKAL80ETC_Concert("Aged Brie", 5, ENOUGH_QUALITY),
-                new OtherItem("Aged Brie", 5, ENOUGH_QUALITY)
+                new BackstagePassesTo_a_TAFKAL80ETC_Concert("Backstage passes to a TAFKAL80ETC concert", 5, ENOUGH_QUALITY),
+                new OtherItem("other item", 5, ENOUGH_QUALITY)
         );
     }
 }
