@@ -30,6 +30,13 @@ public class ItemTest {
 
     @Test
     public void should_not_add_1_quality_when_update_other_quality_and_is_not_expired() {
+        Item item = new Item("other item", NOT_EXPIRED,0);
+        item.updateItem();
+        assertEquals(0,item.getQuality());
+    }
+
+    @Test
+    public void should_not_add_1_quality_when_update_other_quality_and_is_expired() {
         Item item = new Item("other item", HAS_EXPIRED,0);
         item.updateItem();
         assertEquals(0,item.getQuality());
