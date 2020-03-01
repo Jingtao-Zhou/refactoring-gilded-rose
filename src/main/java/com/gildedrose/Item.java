@@ -14,7 +14,7 @@ public class Item {
         this.quality = quality;
     }
 
-    void updateItem() {
+    public void updateItem() {
 
         updateQuality();
 
@@ -24,7 +24,7 @@ public class Item {
 
     }
 
-    private void updateQuality() {
+    protected void updateQuality() {
         if (!this.name.equals("Aged Brie")
                 && !this.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             subQualityIfInStockExceptSulfuras();
@@ -51,7 +51,7 @@ public class Item {
         }
     }
 
-    private void updateWhenExpired() {
+    protected void updateWhenExpired() {
         if (this.sell_in < 0) {
             if (!this.name.equals("Aged Brie")) {
                 if (!this.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
@@ -71,7 +71,7 @@ public class Item {
         }
     }
 
-    private void subQualityIfInStockExceptSulfuras() {
+    protected void subQualityIfInStockExceptSulfuras() {
         if (this.quality > 0) {
             if (!this.name.equals("Sulfuras, Hand of Ragnaros")) {
                 this.quality = this.quality - 1;
