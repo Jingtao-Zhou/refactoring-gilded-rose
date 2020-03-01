@@ -4,7 +4,7 @@ import com.gildedrose.Item;
 
 public class SulfurasHandOfRagnaros extends Item {
 
-    public SulfurasHandOfRagnaros(String name, int sell_in, int quality) {
-        super(name, sell_in, quality);
+    public SulfurasHandOfRagnaros(int sell_in, int quality) {
+        super("Sulfuras, Hand of Ragnaros", sell_in, quality);
     }
 }

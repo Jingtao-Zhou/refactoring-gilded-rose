@@ -11,14 +11,14 @@ public class TexttestFixture {
 
         Item[] items = new Item[] {
                 new OtherItem("+5 Dexterity Vest", 10, 20), //
-                new AgedBrie("Aged Brie", 2, 0), //
+                new AgedBrie(2, 0), //
                 new OtherItem("Elixir of the Mongoose", 5, 7), //
-                new SulfurasHandOfRagnaros("Sulfuras, Hand of Ragnaros", 0, 80), //
-                new SulfurasHandOfRagnaros("Sulfuras, Hand of Ragnaros", -1, 80),
-                new BackstagePassesTo_a_TAFKAL80ETC_Concert("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                new BackstagePassesTo_a_TAFKAL80ETC_Concert("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-                new BackstagePassesTo_a_TAFKAL80ETC_Concert("Backstage passes to a TAFKAL80ETC concert", 5, 49),
-                new BackstagePassesTo_a_TAFKAL80ETC_Concert("Backstage passes to a TAFKAL80ETC concert", 1, 20),
+                new SulfurasHandOfRagnaros(0, 80), //
+                new SulfurasHandOfRagnaros(-1, 80),
+                new BackstagePassesTo_a_TAFKAL80ETC_Concert(15, 20),
+                new BackstagePassesTo_a_TAFKAL80ETC_Concert(10, 49),
+                new BackstagePassesTo_a_TAFKAL80ETC_Concert(5, 49),
+                new BackstagePassesTo_a_TAFKAL80ETC_Concert(1, 20),
                 // this conjured item does not work properly yet
                 new OtherItem("Conjured Mana Cake", 3, 6) };
 

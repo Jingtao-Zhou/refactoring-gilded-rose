@@ -23,14 +23,14 @@ public class ItemTest {
 
     @Test
     public void should_add_1_quality_when_update_Aged_Brie_quality() {
-        Item item = new AgedBrie("Aged Brie", NOT_EXPIRED,0);
+        Item item = new AgedBrie(NOT_EXPIRED,0);
         item.updateItem();
         assertEquals(1, item.getQuality());
     }
 
     @Test
     public void should_add_1_quality_when_update_Backstage_passes_to_a_TAFKAL80ETC_concert_quality() {
-        Item item = new BackstagePassesTo_a_TAFKAL80ETC_Concert("Backstage passes to a TAFKAL80ETC concert", NOT_EXPIRED,0);
+        Item item = new BackstagePassesTo_a_TAFKAL80ETC_Concert(NOT_EXPIRED,0);
         item.updateItem();
         assertEquals(1, item.getQuality());
     }
@@ -51,21 +51,21 @@ public class ItemTest {
 
     @Test
     public void should_add_2_quality_when_update_Aged_Brie_quality_and_is_expired() {
-        Item item = new AgedBrie("Aged Brie", HAS_EXPIRED,0);
+        Item item = new AgedBrie(HAS_EXPIRED,0);
         item.updateItem();
         assertEquals(2, item.getQuality());
     }
 
     @Test
     public void should_not_add_quality_when_quality_is_50() {
-        Item item = new AgedBrie("Aged Brie", NOT_EXPIRED,MAX_QUALITY);
+        Item item = new AgedBrie(NOT_EXPIRED,MAX_QUALITY);
         item.updateItem();
         assertEquals(50, item.getQuality());
     }
 
     @Test
     public void should_not_sub_sell_in_when_update_Sulfuras_Hand_of_Ragnaros() {
-        Item item = new SulfurasHandOfRagnaros("Sulfuras, Hand of Ragnaros", 5, ENOUGH_QUALITY);
+        Item item = new SulfurasHandOfRagnaros(5, ENOUGH_QUALITY);
         item.updateItem();
         assertEquals(5, item.getSell_in());
     }
@@ -81,7 +81,7 @@ public class ItemTest {
 
     @Test
     public void should_set_quality_to_0_when_expired_and_update_Backstage_passes_to_a_TAFKAL80ETC_concert() {
-        Item item = new BackstagePassesTo_a_TAFKAL80ETC_Concert("Backstage passes to a TAFKAL80ETC concert", HAS_EXPIRED, ENOUGH_QUALITY);
+        Item item = new BackstagePassesTo_a_TAFKAL80ETC_Concert(HAS_EXPIRED, ENOUGH_QUALITY);
         item.updateItem();
         assertEquals(0, item.getQuality());
     }
@@ -95,8 +95,8 @@ public class ItemTest {
 
     private List<Item> get5SellInItemsWithEnoughQualityExceptSulfurasHandOfRagnaros(){
         return Lists.newArrayList(
-                new AgedBrie("Aged Brie", 5, ENOUGH_QUALITY),
-                new BackstagePassesTo_a_TAFKAL80ETC_Concert("Backstage passes to a TAFKAL80ETC concert", 5, ENOUGH_QUALITY),
+                new AgedBrie(5, ENOUGH_QUALITY),
+                new BackstagePassesTo_a_TAFKAL80ETC_Concert(5, ENOUGH_QUALITY),
                 new OtherItem("other item", 5, ENOUGH_QUALITY)
         );
     }
