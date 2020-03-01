@@ -2,11 +2,11 @@ package com.gildedrose;
 
 public class Item {
 
-    public String name;
+    private String name;
 
-    public int sell_in;
+    private int sell_in;
 
-    public int quality;
+    private int quality;
 
     public Item(String name, int sell_in, int quality) {
         this.name = name;
@@ -69,5 +69,17 @@ public class Item {
     @Override
     public String toString() {
         return this.name + ", " + this.sell_in + ", " + this.quality;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getSell_in() {
+        return sell_in;
+    }
+
+    public int getQuality() {
+        return quality;
     }
 }
